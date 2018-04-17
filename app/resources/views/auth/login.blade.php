@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 title_polla">
-            Polla World Cup
+            Project Manager
         </div>
     </div>
     <div class="row justify-content-center">
@@ -79,7 +79,7 @@
 
                     <div class="form-group row mb-0">
                         <div class="col-md-8 offset-md-2" style="text-align: center;">
-                            <p>Questions? contact@pollaworldcup.com</p>
+                            <p>Preguntas? c@universidadean.edu.co</p>
                         </div>
                     </div>
                     

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Polla2018.com'),
+    'name' => env('APP_NAME', 'Project Manager'),
 
     /*
     |--------------------------------------------------------------------------

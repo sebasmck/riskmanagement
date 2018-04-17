@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 title_polla">
-                Polla World Cup 2018
+                Inicio
             </div>
         </div>
 
@@ -14,7 +14,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-4">
-                                <h4>{{ __('My polls') }} </h4>
+                                <h4>{{ __('Mis Proyectos') }} </h4>
                             </div>
                             <div class="col-md-8">
                                 <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary addbutton" id="myBtn"><span class="fa fa-plus">+</span></button>
@@ -31,9 +31,8 @@
                                     <table id="myTable" class="display">
                                             <thead>
                                                 <tr>
-                                                    <th>Nickname Poll</th>
-                                                    <th>Status</th>
-                                                    <th>Picks Complete</th>
+                                                    <th>Proyecto</th>
+                                                    <th>Estado</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -119,7 +118,7 @@
           
             <!-- Modal Header -->
             <div class="modal-header">
-              <h4 class="modal-title">Create poll</h4>
+              <h4 class="modal-title">Crear Nuevo Proyecto</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             
@@ -132,7 +131,7 @@
 
                     <div class="form-group row">
                         <div class="col-md-12">
-                            <input id="poll_name" type="text" class="form-control{{ $errors->has('poll_name') ? ' is-invalid' : '' }}" name="poll_name" value="{{ old('poll_name') }}" required placeholder="Poll Name">
+                            <input id="poll_name" type="text" class="form-control{{ $errors->has('poll_name') ? ' is-invalid' : '' }}" name="poll_name" value="{{ old('poll_name') }}" required>
 
                                 @if ($errors->has('poll_name'))
                                     <span class="invalid-feedback">
@@ -145,7 +144,7 @@
                     <div class="form-group row">
                         <div class="col-md-8 offset-md-2">
                             <button type="submit" class="btn btn-primary" style="width: 100%;">
-                                {{ __('Save') }}
+                                {{ __('Guardar') }}
                             </button>
 
                             {{-- <a class="btn btn-link" href="{{ route('password.request') }}">
