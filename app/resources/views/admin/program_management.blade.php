@@ -28,7 +28,6 @@
                               Admin
                             </p>
                             <p class="subtitle">
-                              
                             </p>
                           </div>
                           <div class="column is-narrow">
@@ -45,14 +44,14 @@
                       <div class="container">
                         <nav class="tabs is-boxed">
                           <ul>
-                            <li class="is-active">
-                              <a href="/admin">Apovals</a>
+                            <li>
+                              <a href="/admin">Aprovals</a>
                             </li>
                             <li >
                               <a href="/assign">User Management</a>
                             </li>
-                            <li >
-                              <a href="/assign">Program Management</a>
+                            <li class="is-active">
+                              <a href="/program">Program Management</a>
                             </li>
                           </ul>
                         </nav></div>
@@ -62,7 +61,8 @@
 
                   <section class="section">
                     <div class="container">
-                      <h1 class="title"><b> Pending Aprovals </b></h1>                  
+                      <a class="button is-success is-pulled-right" href="/">Empresas</a>
+                      <h1 class="title"><b> Program Management</b></h1>                  
                       <hr style="margin-bottom: 0;">
                       <table id="pendings" class="display">
                             <thead>
@@ -73,15 +73,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach($users as $user)
-                                @if($user->is_approved == 0)
+                            
                                 <tr>
-                                    <td>{{$user->nickname}}</td>
-                                    <td>{{$user->email}}</td>
-                                    <td><a class="button is-danger" href="{{route('admins.edit', $user->id)}}"> Aprobar </a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
-                                @endif
-                            @endforeach
+                                
                             </tbody>
                             
                         </table>

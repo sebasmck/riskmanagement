@@ -3,7 +3,7 @@
         <nav class="navbar is-transparent">
                 <div class="navbar-brand">
                   <a class="navbar-item" href="/home">
-                    Polla World Cup
+                    Project Manager
                   </a>
                   <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
                     <span></span>

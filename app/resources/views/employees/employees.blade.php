@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 title_polla">
-                Project Manager | Home
+                 Employees
             </div>
         </div>
 
@@ -14,13 +14,12 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-4">
-                                <h4>{{ __('Mis Proyectos') }} </h4>
+                                 <a style="float: left; margin-right: 15px;" href="{{route('home')}}"><button class="btn btn-primary" id="close"> < </button></a>
+                                <h4>{{ __('Employees') }} </h4>
                             </div>
                             <div class="col-md-8">                                
                                 <div class="mainmenu">
-                                    <a href="{{route('management_menu')}}"><button type="button" class="btn btn-primary">Management</button></a>
-                                   
-                                    <a href="{{route('project.create')}}"><button type="button" class="btn btn-primary"><span class="fa fa-plus"></span></button></a>
+                                    <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary" id="myBtn" style="width: 100%; padding-top: 0;"> + <span style="font-size: 19px;     font-weight: 700;"></span></button>
                                 </div>
                             </div>
 
@@ -36,25 +35,22 @@
                                     <table id="myTable" class="display">
                                             <thead>
                                                 <tr>
-                                                    <th>Project</th>
-                                                    <th>Progress</th>
-                                                    <th></th>
+                                                    <th>Name</th>
+                                                    <th>position</th>
+                                                    <th>email</th>
+                                                    <th>phone</th>
+                                                    <th>Edit</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($projects as $project)
+                                                @foreach($employees as $employee)
                                                 <tr>
-                                                    <td>{{$project->name}}</td>
-                                                    <td>{{$project->status}}</td>
-                                                    <td></td>
-                                                    <td><div class="form-group row mb-0">
-                                                        <div class="col-md-8 offset-md-4">
-                                                            <div class="control">
-                                                                <button class="btn btn-primary" onclick="window.location='{{ route('project.show', $project->id_project) }}'">Edit Project</button>
-                                                            </div>
-                                                        </div>
-                                                    </div></td>
-                                                </tr> 
+                                                    <td>{{$employee->name}}</td>
+                                                    <td>{{$employee->position}}</td>
+                                                    <td>{{$employee->email}}</td>
+                                                    <td>{{$employee->phone}}</td>
+                                                    <td><a href=""> <center> <button type="button" class="btn btn-primary">Edit</button> </center></a></td>
+                                                </tr>
                                                 @endforeach
                                             </tbody>
                                     </table> 
@@ -118,24 +114,39 @@
           
             <!-- Modal Header -->
             <div class="modal-header">
-              <h4 class="modal-title">Crear Nuevo Proyecto</h4>
+              <h4 class="modal-title">Add Employee</h4>
+
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             
             <!-- Modal body -->
-            {{-- <div class="modal-body">
-            <form  action="{{route('pollregistration')}}" method="POST">
+            <div class="modal-body">
+            <form  action="{{route('employee.store')}}" method="POST">
                     @csrf
-            <input type="hidden" value="{{Auth::user()->id}}" name="user_id">
+
+                    <input type="hidden" value="{{$id_empresa}}" name="id_company">
+
                     <div class="form-group row">
                         <div class="col-md-12">
-                            <input id="poll_name" type="text" class="form-control{{ $errors->has('poll_name') ? ' is-invalid' : '' }}" name="poll_name" value="{{ old('poll_name') }}" required>
+                            <label for="position">Name</label>
+                            <input id="name" type="text" class="form-control" name="name" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label for="position">Position</label>
+                            <input id="position" type="text" class="form-control" name="position" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="position">phone #</label>
+                            <input id="phone" type="text" class="form-control" name="phone" required>
+                        </div>
+                    </div>
 
-                                @if ($errors->has('poll_name'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('poll_name') }}</strong>
-                                    </span>
-                                @endif
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <label for="position">E-mail</label>
+                            <input id="email" type="text" class="form-control" name="email" required>
                         </div>
                     </div>
 
@@ -147,7 +158,7 @@
                         </div>
                     </div>
                 </form>
-            </div> --}}
+            </div>
           </div>
         </div>
       </div>

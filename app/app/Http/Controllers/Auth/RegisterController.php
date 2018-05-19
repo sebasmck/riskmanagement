@@ -54,9 +54,9 @@ class RegisterController extends Controller
                       'email' => $user->email,
                       'password' => $request->password);
 
-        Emails::email_registration_user($user->email, $data);
-        Emails::email_registration_admin($data);
-        // $this->guard()->login($user);
+        // Emails::email_registration_user($user->email, $data);
+        // Emails::email_registration_admin($data);
+        // // $this->guard()->login($user);
 
         return $this->registered($request, $user)
                         ?: redirect($this->redirectPath());

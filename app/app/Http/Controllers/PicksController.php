@@ -10,4 +10,6 @@ class PicksController extends Controller
     {
         return view('picks.picks');
     }   
+
+
 }

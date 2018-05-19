@@ -18,9 +18,17 @@ class AdminsController extends Controller
     public function assignRep(){
 
         $users = User::all();
-        $reps = Rep::all();
 
-        return view('admin.assign_rep')->with('users', $users)->with('reps', $reps);
+        return view('admin.assign_rep')->with('users', $users);
+
+    }
+
+
+    // get program management page
+
+    public function programManagement(){
+
+        return view ('admin.program_management');
 
     }
 
@@ -104,10 +112,11 @@ class AdminsController extends Controller
      */
     public function show($id)
     {
-        $polls = User::find($id)->polls;
+        // $user = User::find($id)->projects;
         $user = User::find($id);
 
-        return view('admin.user_polls')->with('polls', $polls)->with('user', $user);
+
+        return view('admin.admin_detail')->with('user', $user);
 
     }
 

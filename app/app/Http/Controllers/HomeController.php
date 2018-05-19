@@ -6,9 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Auth\Events\Registered;
 
-use App\PollsModel;
-
-
+use App\Project;
 use App\User;
 
 class HomeController extends Controller
@@ -20,12 +18,18 @@ class HomeController extends Controller
     }
 
 
+    public function managementPage(){
+        return view ('management.management_menu');
+    }
+
 
     public function index()
     {
         $id_user = auth()->user()->id;
-        $polls = PollsModel::getBbyUser($id_user);
-        return view('home')->with('polls', $polls);
+
+        $projects = Project::getBbyUser($id_user);
+        
+        return view('home')->with('projects', $projects)->with('id_user', $id_user);
     }
 
     public function indexAdmin()

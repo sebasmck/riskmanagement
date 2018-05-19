@@ -7,6 +7,18 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+.menucards{
+    margin-bottom: 30px;
+    border-radius: 25px;
+}
+
+.allicons a{
+    color:navy;
+}
+
+
+
+
 :root {
     --blue: #007bff;
     --indigo: #6610f2;
@@ -9353,14 +9365,18 @@ a.text-dark:hover {
 	}
 }
 
-.addbutton{
-    position: absolute;
+/*.addbutton{
+    position: relative;
     right: 8px;
-    width: 35px;
+    width: auto;
     height: 35px;
+}*/
 
+.mainmenu{
+    position:absolute;
+    right:10px;
+    
 }
-
 
 /*FLAGS*/
 .img_flags{

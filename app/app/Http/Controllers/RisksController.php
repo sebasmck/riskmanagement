@@ -4,7 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AprovalsController extends Controller
+
+use App\Stage;
+use App\Category;
+use App\Group;
+use App\Project;
+use App\Employee;
+
+class RisksController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +30,20 @@ class AprovalsController extends Controller
      */
     public function create()
     {
-        //
+        
+        
+        $employees = Employee::all();
+        $stages = Stage::all();
+        $categories = Category::all();
+        $groups = Group::all();
+
+
+       return view('projects.risks.create_risk')
+        ->with('stages', $stages)
+        ->with('employees', $employees)
+        ->with('categories', $categories)
+        ->with('groups', $groups);
+
     }
 
     /**
