@@ -45,7 +45,7 @@
                         <nav class="tabs is-boxed">
                           <ul>
                             <li>
-                              <a href="/admin">Aprovals</a>
+                              <a href="/admin">Approvals</a>
                             </li>
                             <li >
                               <a href="/assign">User Management</a>
@@ -59,34 +59,34 @@
                     
                   </section>
 
-                  <section class="section">
-                    <div class="container">
-                      <a class="button is-success is-pulled-right" href="/">Empresas</a>
-                      <h1 class="title"><b> Program Management</b></h1>                  
-                      <hr style="margin-bottom: 0;">
-                      <table id="pendings" class="display">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>email</th>
-                                    <th>Aprove</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                
-                            </tbody>
-                            
-                        </table>
 
 
+                  <section style="margin-top: 200px;" class="section">
+                    <div id="grid" class="columns">
+                      <div class="column">
+                        <div class="notification is-grey-light has-text-centered">
+                          <p class="title">1</p>
+                        </div>
+                      </div>
+                      <div class="column">
+                        <div class="notification is-grey-light has-text-centered">
+                          <p class="title">2</p>
+                        </div>
+                      </div>
+                      <div class="column">
+                        <div class="notification is-grey-light has-text-centered">
+                          <p class="title">3</p>
+                        </div>
+                      </div>
+                      <div class="column">
+                        <div class="notification is-grey-light has-text-centered">
+                          <p class="title">4</p>
+                        </div>
+                      </div>
                     </div>
                   </section>
+
+
     </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

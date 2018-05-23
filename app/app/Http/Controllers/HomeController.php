@@ -25,11 +25,11 @@ class HomeController extends Controller
 
     public function index()
     {
-        $id_user = auth()->user()->id;
+        $id_company = auth()->user()->id_company;
 
-        $projects = Project::getBbyUser($id_user);
+        $projects = Project::getBbycompany($id_company);
         
-        return view('home')->with('projects', $projects)->with('id_user', $id_user);
+        return view('home')->with('projects', $projects)->with('id_company', $id_company);
     }
 
     public function indexAdmin()

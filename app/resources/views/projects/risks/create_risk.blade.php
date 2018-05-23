@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 title_polla">
-            Add Risks
+            <span><i class="fas fa-chart-line"></i> Add Risks</span>
         </div>
     </div>
 

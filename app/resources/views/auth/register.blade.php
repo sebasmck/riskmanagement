@@ -42,18 +42,6 @@
 
                         <div class="form-group row">
                             <div class="col-md-12">
-                                <input id="nickname" type="text" class="form-control{{ $errors->has('nickname') ? ' is-invalid' : '' }}" name="nickname" value="{{ old('nickname') }}" required placeholder="Nickname">
-
-                                @if ($errors->has('nickname'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('nickname') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>    
-
-                        <div class="form-group row">
-                            <div class="col-md-12">
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required placeholder="Password">
                                 
                                 @if ($errors->has('password'))
@@ -96,17 +84,6 @@
 
                         <div class="form-group row">
                             <div class="col-md-12">
-                                <input id="city" type="text" class="form-control{{ $errors->has('city') ? ' is-invalid' : '' }}" name="city" value="{{ old('city') }}" required placeholder="City">
-                                    @if ($errors->has('city'))
-                                        <span class="invalid-feedback">
-                                            <strong>{{ $errors->first('city') }}</strong>
-                                        </span>
-                                    @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-12">
                                 <input id="cellphone" type="text" class="form-control{{ $errors->has('cellphone') ? ' is-invalid' : '' }}" name="cellphone" value="{{ old('cellphone') }}" required placeholder="Cellphone">
                                     @if ($errors->has('cellphone'))
                                         <span class="invalid-feedback">
@@ -116,18 +93,17 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">                                
+                         <div class="form-group row">
                             <div class="col-md-12">
-                                <input id="referredby" type="text" class="form-control{{ $errors->has('referredby') ? ' is-invalid' : '' }}" name="referredby" value="{{ old('referredby') }}" required placeholder="Referred By">
-                                    @if ($errors->has('referredby'))
+                                <input id="company" type="text" class="form-control{{ $errors->has('company') ? ' is-invalid' : '' }}" name="company" value="{{ old('company') }}" required placeholder="Company">
+                                    @if ($errors->has('company'))
                                         <span class="invalid-feedback">
-                                            <strong>{{ $errors->first('referredby') }}</strong>
+                                            <strong>{{ $errors->first('company') }}</strong>
                                         </span>
                                     @endif
                             </div>
                         </div>
 
-                    
                         <div class="form-group row">
                             <div class="col-md-8 offset-md-2">
                                 <button type="submit" class="btn btn-primary" style="width: 100%;">

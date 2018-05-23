@@ -96,26 +96,26 @@
 
               <!-- START MAIN CONTENT AREA -->
               <tr>
+                <img style="height:80%;" src="{{URL::asset('img/logo.png')}}" alt="">
                 <td class="wrapper" style="font-family: sans-serif; font-size: 14px; vertical-align: top; box-sizing: border-box; padding: 20px;">
                   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
                     <tr>
                       <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
                         <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Hi {!!$name!!} {!!$lastname!!},</p>
-                        <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Thank you for registering in pollaworldcup.com! On behalf of the team at pollaworldcup.com, we are excited to have you in our Russia 2018 World Cup Pool. Please allow up to 24 hours for your registration to be accepted. Once accepted, you can log into the website and choose your scores and qualified teams for the World Cup 2018.</p>
+                        <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Thank you for registering! On behalf of our team at riskmanagernow.site, we are excited to have you. Please allow up to 24 hours for your registration to be accepted. Once accepted, you can log into the manager and start working in a breeze!</p>
 
                         <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Your username is: <strong>{!!$email!!}</strong></p>
                         <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Your password is: <strong>{!!$password!!}</strong></p>
                        
-                        <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Once you enter your picks, you will find a link to print them. In addition, on June 11th, after the registration deadline, you will be able to view and print every participant’s picks. You can register as many World Cup Pools as you like with the same email, but just make sure to create a different nickname for every Pool.</p>
+                        <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">In the meantime we'll be checking your account, we need to ensure that your company hasn't register already, as soon as we're done with it we'll get back to you with a welcome email.</p>
 
                         
                         <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Good luck!
-                            <br><strong>PollaWorldCup.com Team</strong>
-                            <br>contact@PollaWorldCup.com  
-                            <br>miami@PollaWorldCup.com 
-                            <br>newyork@PollaWorldCup.com 
-                            <br>bogotá@PollaWorldCup.com
-                            <br>barranquilla@PollaWorldCup.com</p>
+                            <br> 
+                            <br>infomanagernow@gmail.com</p>
+                            <br>
+                            Sincerely,
+                            <b>riskmanagernow.site</b>
                       </td>
                     </tr>
                   </table>

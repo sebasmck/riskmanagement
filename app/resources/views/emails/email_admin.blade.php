@@ -87,12 +87,14 @@
   <body class="" style="background-color: #f6f6f6; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
     <table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background-color: #f6f6f6;">
       <tr>
+
+        <img style="height:50%;" src="{{URL::asset('img/logo.png')}}" alt="">
         <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">&nbsp;</td>
         <td class="container" style="font-family: sans-serif; font-size: 14px; vertical-align: top; display: block; Margin: 0 auto; max-width: 580px; padding: 10px; width: 580px;">
           <div class="content" style="box-sizing: border-box; display: block; Margin: 0 auto; max-width: 580px; padding: 10px;">
 
             <!-- START CENTERED WHITE CONTAINER -->
-            <span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">This is preheader text. Some clients will show this text as a preview.</span>
+            <span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">Please check your email</span>
             <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
 
               <!-- START MAIN CONTENT AREA -->
@@ -102,20 +104,11 @@
                     <tr>
                       <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
                         <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Hi {!!$name!!} {!!$lastname!!},</p>
-                        <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Thank you for registering in pollaworldcup.com! On behalf of the team at pollaworldcup.com, we are excited to have you in our Russia 2018 World Cup Pool. Please allow up to 24 hours for your registration to be accepted. Once accepted, you can log into the website and choose your scores and qualified teams for the World Cup 2018.</p>
+                        
 
-                        <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Your username is: <strong>{!!$email!!},</strong></p>
+                        <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">A new user has registed with: username: <strong>{!!$email!!},</strong></p>
                        
-                        <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">nce you enter your picks, you will find a link to print them. In addition, on June 11th, after the registration deadline, you will be able to view and print every participant’s picks. You can register as many World Cup Pools as you like with the same email, but just make sure to create a different nickname for every Pool.</p>
-
-                      
-                        <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Good luck!
-                            <br><strong>PollaWorldCup.com</strong>
-                            <br>Teamcontact@PollaWorldCup.com  
-                            <br>miami@PollaWorldCup.com 
-                            <br>newyork@PollaWorldCup.com 
-                            <br>bogotá@PollaWorldCup.com</p>
-                            <br>barranquilla@PollaWorldCup.com</p>
+                        <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Please make sure to review their account.</p>
                       </td>
                     </tr>
                   </table>

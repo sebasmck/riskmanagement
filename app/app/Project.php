@@ -12,9 +12,23 @@ class Project extends Model
 
     public $timestamps = false;
 
+    protected $fillable = [
+    	'company_id',
+    	'name',
+    	'status',
+    	'date',
+    	'country_id',
+    	'description',
+    	'is_active',
+    	'user_id',
+    ];
+
 
     public static function getBbyUser($id_user){
     	return Project::where('user_id','=',$id_user)->get();
     }
 
+    public static function getBbyCompany($company_id){
+    	return Project::where('company_id','=',$company_id)->get();
+    }
 }

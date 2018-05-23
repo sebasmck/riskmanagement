@@ -54,8 +54,8 @@ class RegisterController extends Controller
                       'email' => $user->email,
                       'password' => $request->password);
 
-        // Emails::email_registration_user($user->email, $data);
-        // Emails::email_registration_admin($data);
+        Emails::email_registration_user($user->email, $data);
+        Emails::email_registration_admin($data);
         // // $this->guard()->login($user);
 
         return $this->registered($request, $user)
@@ -84,10 +84,9 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
-            'nickname' => 'required|unique:users|string|max:255',
+            'company' => 'required|unique:users|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6',
-            'city' => 'required|string|min:2',
             'cellphone' => 'required|string|min:7'
         ]);
     }
@@ -105,12 +104,10 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'lastname' => $data['lastname'],
-            'nickname' => $data['nickname'],
+            'company' => $data['company'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'city' => $data['city'],
             'cellphone' => $data['cellphone'],
-            'referredby' => $data['referredby'],
             'is_approved' => 0,
         ]);
     }

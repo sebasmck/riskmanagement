@@ -46,16 +46,16 @@
                         <nav class="tabs is-boxed">
                           <ul>
                             <li class="is-active">
-                              <a href="/admin">Apovals</a>
+                              <a href="/admin">Approvals</a>
                             </li>
                             <li >
                               <a href="/assign">User Management</a>
                             </li>
                             <li >
-                              <a href="/assign">Program Management</a>
+                              <a href="/program">Program Management</a>
                             </li>
                           </ul>
-                        </nav></div>
+                        </nav></div>d
                       </div>
                     
                   </section>
@@ -69,6 +69,7 @@
                                 <tr>
                                     <th>Name</th>
                                     <th>email</th>
+                                    <th>Requesting</th>
                                     <th>Aprove</th>
                                 </tr>
                             </thead>
@@ -76,9 +77,10 @@
                             @foreach($users as $user)
                                 @if($user->is_approved == 0)
                                 <tr>
-                                    <td>{{$user->nickname}}</td>
+                                    <td>{{$user->name .' '. $user->lastname }}</td>
                                     <td>{{$user->email}}</td>
-                                    <td><a class="button is-danger" href="{{route('admins.edit', $user->id)}}"> Aprobar </a></td>
+                                    <td>{{$user->company}}</td>
+                                    <td><a class="button is-danger" href="{{route('admins.edit', $user->id)}}"> Aprove </a></td>
                                 </tr>
                                 @endif
                             @endforeach

@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 title_polla">
-                Nuevo Proyecto
+                <span><i class="fas fa-plus-square"></i> New Project</span>
             </div>
         </div>
 
@@ -37,14 +37,16 @@
                                         <div class="card-body">
                                             <ul class="nav nav-tabs">
                                                 <li class="nav-item">
-                                                    <a class="nav-link active" data-toggle="tab" href="#general">Información General</a>
+                                                    <a class="nav-link active" data-toggle="tab" href="#general">Project info</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" data-toggle="tab" href="#recursos">Asignación de Recursos</a>
+                                                    <a class="nav-link" data-toggle="tab" href="#recursos">
+                                                        Resources
+                                                    </a>
                                                 </li>
                                             </ul>
 
-                                            <form action="{{route('project.store')}}">
+                                            <form method="POST" action="{{route('project.store')}}">
                                                 @csrf
                                             
                                             <div class="tab-content">
@@ -59,7 +61,7 @@
                                                             <div class="form-group">
                                                                 <label for="country">Country:</label>
                                                                 <div class="select">
-                                                                {{ Form::select('country', $countries->prepend('none')->pluck('name', 'id'), null, ['class' => 'form-control', 'id' => 'country']) }}</div>
+                                                                {{ Form::select('country_id', $countries->prepend('none')->pluck('name', 'id'), null, ['class' => 'form-control', 'id' => 'country']) }}</div>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="date">Date: </label>
@@ -85,7 +87,7 @@
                                                         <div class="card-body col-md-8 workforce">
                                                             <div class="form-group">
                                                                 <label for="name">Users</label>
-                                                                {{ Form::select('employees', $employees->prepend('none')->pluck('name', 'id_employee'), null, ['class' => 'form-control', 'id' => 'employee']) }}
+                                                                {{ Form::select('id_employee[]', $employees->prepend('none')->pluck('name', 'id_employee'), null, ['class' => 'form-control', 'id' => 'employee']) }}
                                                                 {{-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus> --}}
                                                             </div>
                                                         </div>  
@@ -94,19 +96,14 @@
                                                         </table>
                                                         <br>  
                                                             <div class="col-md-2">
-                                                                <button type="button" name="addemployee" id="addemployee" class="btn btn-success">New Field</button>
+                                                                <button type="button" name="addemployee" id="addemployee" class="btn btn-success"><span><i style="margin-right: 5px;" class="fas fa-plus-square"></i></span> New Field</button>
                                                             </div>
                                                         <br>
                                                         <div class="form-group row">
-                                                            <div class="col-md-8 offset-md-2">
-                                                                {{-- <button type="submit" class="btn btn-primary" style="width: 100%;">
-                                                                    {{ __('Guardar') }}
-                                                                </button> --}}
-                                                                {{-- <button type="submit" class="btn btn-primary" style="width: 100%;">
-                                                                    {{ __('Guardar') }}
-                                                                </button>  --}}
-
-                                                                <a href="{{route('project.store')}}">guardar</a>
+                                                            <div class="col-md-8 offset-md-9">
+                                                                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                                                    {{ __('Save') }}
+                                                                </button>
                                                             </div>
                                                         </div>                                              
                                                     </div>
@@ -133,7 +130,7 @@
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div> 
      </div>
 @endsection
 
@@ -164,7 +161,7 @@
         $('<table>'+
           '<tbody>'+
           '<tr id="row'+i+'" class="dynamic-added-employee">'+ 
-          '<td><div class="form-group">{{ Form::select('employees[]', $employees->prepend('none')->pluck('name', 'id_employee'), null, ['class' => 'form-control', 'id' => 'employee', 'style' => 'width:350px;']) }}</div></td>'+
+          '<td><div class="form-group">{{ Form::select('id_employee[]', $employees->prepend('none')->pluck('name', 'id_employee'), null, ['class' => 'form-control', 'id' => 'employee', 'style' => 'width:350px;']) }}</div></td>'+
           '</td><td><button style="margin-left:30px;" type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr></tbody></table>').appendTo('.workforce');  
 
        }); 

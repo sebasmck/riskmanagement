@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 title_polla">
-                Project Manager | Home
+                <span><i class="fas fa-home"></i> Home</span>
             </div>
         </div>
 
@@ -14,7 +14,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-4">
-                                <h4>{{ __('Mis Proyectos') }} </h4>
+                                <h4>{{ __('My Projects') }} </h4>
                             </div>
                             <div class="col-md-8">                                
                                 <div class="mainmenu">

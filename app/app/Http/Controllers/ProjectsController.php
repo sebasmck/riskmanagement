@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Country;
 use App\Project;
 use App\Employee;
+use App\Employee_r;
 
 class ProjectsController extends Controller
 {
@@ -28,8 +29,11 @@ class ProjectsController extends Controller
     {
         $countries = Country::all();
         $employees = Employee::all();
+        
 
-        return view('projects.create_project')->with('countries', $countries)->with('employees', $employees);
+        return view('projects.create_project')
+        ->with('countries', $countries)
+        ->with('employees', $employees);
     }
 
     /**
@@ -38,11 +42,36 @@ class ProjectsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $req)
     {
-            
-        return view('projects.risks.create_risk');
+    
+        $project = new Project();
 
+        $project->name = $req->input('name');
+        $project->company_id = 1;
+        $project->country_id = $req->input('country_id');
+        $project->date = $req->input('date');
+        $project->description = $req->input('description');
+
+        // dd($project);
+
+        $project->save();
+
+        if ($project) {
+
+        foreach ($req->id_employee as $key => $v) {
+            $data = array(
+                'id_project' => $project->id_project,
+                'id_employee' => $req->id_employee [$key],
+            );
+            Employee_r::insert($data);
+        }
+
+        return redirect()->back();
+        return redirect('projects.risks.create_risk')->with('project', $project);
+
+    }             
+        
 
     }
 

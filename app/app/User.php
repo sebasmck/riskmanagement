@@ -15,13 +15,14 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'lastname', 'nickname', 'city' ,'cellphone' ,'referredby', 'is_approved'
+        'name', 'email', 'password', 'lastname', 'company', 'cellphone'
     ];
+
+    public $timestamps = false;
 
     /**
      * The attributes that should be hidden for arrays.
      *
-     * @var array
      */
     protected $hidden = [
         'password', 'remember_token',
@@ -31,8 +32,9 @@ class User extends Authenticatable
         return $this->hasOne('App\Company', 'id_company', 'id_company');
     }
 
-    public function projects(){
-        return $this->hasMany('App\Project', 'id_user', 'id');
-    }
+    // public function projects(){
+    //     return $this->hasMany(
+    //  * @var array'App\Project', 'id_user', 'id');
+    // }
     
 }
