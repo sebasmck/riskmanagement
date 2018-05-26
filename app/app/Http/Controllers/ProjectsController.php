@@ -106,11 +106,13 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_project)
     {
         // require project id to bring all variables 
 
-        return view('projects.matrix.main_matrix');
+        $risks = Risk::where('id_project', '=', $id_project)->get();
+
+        return view('projects.matrix.main_matrix')->with('risks', $risks);
     }
 
     /**

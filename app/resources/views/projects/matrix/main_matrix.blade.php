@@ -28,42 +28,194 @@
                         <div style="height: 45px; background-color: navy;" class="row">
                             <div style="background-color: navy;" class="box"><center>Nivel de Riesgo</center></div>
                         </div>
+
+                        
                         
 
                         <div class="row">
-                            <div class="box"><div class="inner">1</div></div>
-                            <div class="box"><div class="inner">2</div></div>
-                            <div class="box"><div class="inner">3</div></div>
-                            <div class="box"><div class="inner">4</div></div>
-                            <div class="box"><div class="inner">5</div></div>
+                            <div class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 1 && $risk->impact == 5)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
+                            <div class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 2 && $risk->impact == 5)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
+                            <div class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 3 && $risk->impact == 5)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
+                            <div class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 4 && $risk->impact == 5)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
+                            <div class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 5 && $risk->impact == 5)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
                         </div>
                         <div class="row">
-                            <div style="background-color: #ffff14;" class="box"><div class="inner">6</div></div>
-                            <div style="background-color: #ffff14;" class="box"><div class="inner">7</div></div>
-                            <div class="box"><div class="inner">8</div></div>
-                            <div class="box"><div class="inner">9</div></div>
-                            <div class="box"><div class="inner">10</div></div>
+                            <div style="background-color: #ffff14;" class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 1 && $risk->impact == 4)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
+                            <div style="background-color: #ffff14;" class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 2 && $risk->impact == 4)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
+                            <div class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 3 && $risk->impact == 4)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
+                            <div class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 4 && $risk->impact == 4)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
+                            <div class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 5 && $risk->impact == 4)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
                         </div>
                         <div class="row">
-                            <div style="background-color: #ffff14;" class="box"><div class="inner">11</div></div>
-                            <div style="background-color: #ffff14;" class="box"><div class="inner">12</div></div>
-                            <div style="background-color: #ffff14;" class="box"><div class="inner">13</div></div>
-                            <div class="box"><div class="inner">14</div></div>
-                            <div class="box"><div class="inner">15</div></div>
+                            <div style="background-color: #ffff14;" class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 1 && $risk->impact == 3)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
+                            <div style="background-color: #ffff14;" class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 2 && $risk->impact == 3)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
+                            <div style="background-color: #ffff14;" class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 3 && $risk->impact == 3)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
+                            <div class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 4 && $risk->impact == 3)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
+                            <div class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 5 && $risk->impact == 3)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
                         </div>
                         <div class="row">
-                            <div style="background-color: #16d613;" class="box"><div class="inner">16</div></div>
-                            <div style="background-color: #16d613;" class="box"><div class="inner">17</div></div>
-                            <div style="background-color: #ffff14;" class="box"><div class="inner">18</div></div>
-                            <div style="background-color: #ffff14;" class="box"><div class="inner">19</div></div>
-                            <div style="background-color: #ffff14;" class="box"><div class="inner">20</div></div>
+                            <div style="background-color: #16d613;" class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 1 && $risk->impact == 2)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
+                            <div style="background-color: #16d613;" class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 2 && $risk->impact == 2)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
+                            <div style="background-color: #ffff14;" class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 3 && $risk->impact == 2)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
+                            <div style="background-color: #ffff14;" class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 4 && $risk->impact == 2)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
+                            <div style="background-color: #ffff14;" class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 5 && $risk->impact == 2)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
                         </div>
                         <div class="row">
-                            <div style="background-color: #16d613;" class="box"><div class="inner">21</div></div>
-                            <div style="background-color: #16d613;" class="box"><div class="inner">22</div></div>
-                            <div style="background-color: #16d613;" class="box"><div class="inner">23</div></div>
-                            <div style="background-color: #16d613;" class="box"><div class="inner">24</div></div>
-                            <div style="background-color: #16d613;" class="box"><div class="inner">25</div></div>
+                            <div style="background-color: #16d613;" class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 1 && $risk->impact == 1)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
+                            <div style="background-color: #16d613;" class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 2 && $risk->impact == 1)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
+                            <div style="background-color: #16d613;" class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 3 && $risk->impact == 1)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
+                            <div style="background-color: #16d613;" class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 4 && $risk->impact == 1)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
+                            <div style="background-color: #16d613;" class="box"><div class="inner">
+                                @foreach ($risks as $risk)
+                                    @if ($risk->probability == 5 && $risk->impact == 1)
+                                        {{$risk->id_risk}}
+                                    @endif
+                                @endforeach
+                            </div></div>
                         </div>
 
                         <div class="row">
