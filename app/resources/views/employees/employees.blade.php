@@ -62,47 +62,7 @@
         </div>
         <br>
 
-        {{-- MENU --}}
-        {{-- <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header"><h4>{{ __('Menu') }}</h4></div>
-
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-10 offset-md-1">
-                                <div class="form-group">
-                                    <button type="" class="btn btn-primary" onclick="window.location='{{ route('login') }}'" style="width: 100%;">
-                                        {{ __('') }}
-                                    </button>
-                                </div>    
-                            </div>
-                            <div class="col-md-10 offset-md-1 ">
-                                <div class="form-group">
-                                    <button type="" class="btn btn-primary" onclick="window.location='{{ route('rules') }}'" style="width: 100%;">
-                                        {{ __('Read the Rules') }}
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="col-md-10 offset-md-1 ">
-                                <div class="form-group">
-                                    <button type="" class="btn btn-primary" onclick="window.location='{{ route('login') }}'" style="width: 100%;">
-                                        {{ __('Worldcup Results') }}
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="col-md-10 offset-md-1 ">
-                                 <div class="form-group">
-                                    <button type="" class="btn btn-primary" onclick="window.location='{{ route('login') }}'" style="width: 100%;">
-                                        {{ __('Ranking and Poolwide picks') }}
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
+        
 
      </div>
 
@@ -124,7 +84,7 @@
             <form  action="{{route('employee.store')}}" method="POST">
                     @csrf
 
-                    <input type="hidden" value="{{$id_empresa}}" name="id_company">
+                    <input type="hidden" value="{{Auth::user()->company_id}}" name="id_company">
 
                     <div class="form-group row">
                         <div class="col-md-12">
@@ -153,7 +113,7 @@
                     <div class="form-group row">
                         <div class="col-md-8 offset-md-2">
                             <button type="submit" class="btn btn-primary" style="width: 100%;">
-                                {{ __('Guardar') }}
+                                {{ __('Save') }}
                             </button>
                         </div>
                     </div>

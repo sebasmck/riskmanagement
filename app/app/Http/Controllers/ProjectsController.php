@@ -7,6 +7,8 @@ use App\Country;
 use App\Project;
 use App\Employee;
 use App\Employee_r;
+use App\Risk;
+use Auth;
 
 class ProjectsController extends Controller
 {
@@ -26,11 +28,13 @@ class ProjectsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        $countries = Country::all();
-        $employees = Employee::all();
-        
+    {   
+        $id_company = Auth()->user()->id_company;
 
+        $countries = Country::getByCompany($id_company);
+        
+        $employees = Employee::getByCompany($id_company);
+        
         return view('projects.create_project')
         ->with('countries', $countries)
         ->with('employees', $employees);
@@ -46,9 +50,10 @@ class ProjectsController extends Controller
     {
     
         $project = new Project();
+        $employee_r = 
 
         $project->name = $req->input('name');
-        $project->company_id = 1;
+        $project->company_id = Auth()->user()->id_company;
         $project->country_id = $req->input('country_id');
         $project->date = $req->input('date');
         $project->description = $req->input('description');
@@ -59,20 +64,24 @@ class ProjectsController extends Controller
 
         if ($project) {
 
+
         foreach ($req->id_employee as $key => $v) {
+
+            $employee = Employee::find($req->id_employee [$key]);  
+            
             $data = array(
                 'id_project' => $project->id_project,
-                'id_employee' => $req->id_employee [$key],
+                'name' => $employee->name,
+                'position' => $employee->position,
+                'email' => $employee->email,
+                'phone' => $employee->phone,
             );
             Employee_r::insert($data);
         }
-
-        return redirect()->back();
-        return redirect('projects.risks.create_risk')->with('project', $project);
-
+        
+        return redirect()->route('home');
     }             
         
-
     }
 
     /**
@@ -85,8 +94,9 @@ class ProjectsController extends Controller
     {
         
         $project = Project::find($id);
-        
-        return view ('projects.project_details')->with('project', $project);
+        $risks = Risk::where('id_project', '=', $id)->get();
+
+        return view ('projects.project_details')->with('project', $project)->with('risks', $risks);
 
     }
 
@@ -98,7 +108,9 @@ class ProjectsController extends Controller
      */
     public function edit($id)
     {
-        //
+        // require project id to bring all variables 
+
+        return view('projects.matrix.main_matrix');
     }
 
     /**

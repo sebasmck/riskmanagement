@@ -16,7 +16,9 @@ class CategoriesController extends Controller
     public function index()
     {
         
-        $categories = Category::all();
+        $id_company = Auth()->user()->id_company;
+
+        $categories = Category::where('id_company', '=', $id_company)->get();
 
         return view('categories.categories')->with('categories', $categories);
 
@@ -43,7 +45,11 @@ class CategoriesController extends Controller
     {
         $category = new Category;
 
+        $id_company = Auth()->user()->id_company;
+
         $category->name = $req->input('name');
+
+        $category->id_company = $id_company;
 
         $category->save();
 

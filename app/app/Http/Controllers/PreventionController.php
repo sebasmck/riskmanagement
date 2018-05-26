@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Prevention;
 
-use App\Country;
-
-class CountriesController extends Controller
+class PreventionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +14,7 @@ class CountriesController extends Controller
      */
     public function index()
     {
-
-        $id_company = Auth()->user()->id_company;
-
-        $countries = Country::where('id_company', '=', $id_company)->get();
-
-        return view('countries.countries')->with('countries', $countries);
+        //
     }
 
     /**
@@ -39,25 +33,9 @@ class CountriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-
-
-
-        
-
-    public function store(Request $req)
+    public function store(Request $request)
     {
-        $country = new Country;
-
-        $id_company = Auth()->user()->id_company;
-
-        $country->name = $req->input('name');
-
-        $country->id_company = $id_company;
-
-        $country->save();
-
-        return redirect()->back();
-
+        //
     }
 
     /**
@@ -68,7 +46,9 @@ class CountriesController extends Controller
      */
     public function show($id)
     {
-        //
+        $preventions = Prevention::where('id_risk', '=', $id)->get();
+
+        return view('projects.risks.prevention')->with('preventions', $preventions);
     }
 
     /**
@@ -102,10 +82,6 @@ class CountriesController extends Controller
      */
     public function destroy($id)
     {
-        $country = Country::find($id);
-
-        $country->delete();
-
-        return redirect()->back();
+        //
     }
 }

@@ -15,11 +15,12 @@ class EmployeesController extends Controller
      */
     public function index()
     {
-        $employees = Employee::all();
-        $id_empresa = 1;
 
-        // retorna la vista -------------> adjunta la variable employee('como la ve blade', 'variable dentro del controller')
-        return view('employees.employees')->with('employees', $employees)->with('id_empresa', $id_empresa);
+        $id_company = Auth()->user()->id_company;
+
+        $employees = Employee::where('id_company', '=', $id_company)->get();
+
+        return view('employees.employees')->with('employees', $employees);
     }
 
     /**
@@ -33,12 +34,6 @@ class EmployeesController extends Controller
     }
 
 
-    public function camismethod(){
-        // metodo
-        return view('employees.camispage');
-    }
-
-
     /**
      * Store a newly created resource in storage.
      *
@@ -48,9 +43,11 @@ class EmployeesController extends Controller
     public function store(Request $req)
     {
         
+        $id_company = Auth()->user()->id_company;
+
         $employee = new Employee;
 
-        $employee->id_company = $req->input('id_company');
+        $employee->id_company = $id_company;
         $employee->name = $req->input('name');
         $employee->position = $req->input('position');
         $employee->email = $req->input('email');

@@ -15,7 +15,11 @@ class GroupsController extends Controller
      */
     public function index()
     {
-        $groups = Group::all();
+        
+        $id_company = Auth()->user()->id_company;
+
+        $groups = Group::where('id_company', '=', $id_company)->get();
+
         return view ('groups.groups')->with('groups', $groups);
     }
 
@@ -39,7 +43,11 @@ class GroupsController extends Controller
     {
         $group = new Group;
 
+        $id_company = Auth()->user()->id_company;
+
         $group->name = $req->input('name');
+
+        $group->id_company = $id_company;
 
         $group->save();
 

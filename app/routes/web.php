@@ -54,6 +54,16 @@ Route::Resource('admins', 'AdminsController');
 
 Route::Resource('project', 'ProjectsController');
 
+
+// MITIGACION
+
+Route::Resource('mitigation', 'MitigationController');
+
+// PREVENCION
+
+Route::Resource('prevention', 'PreventionController');
+
+
 // RISKS
 
 Route::Resource('risk', 'RisksController');

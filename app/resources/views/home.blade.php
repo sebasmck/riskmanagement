@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 title_polla">
-                <span><i class="fas fa-home"></i> Home</span>
+                <span><i class="fas fa-home"></i> {!!$user->company!!}</span>
             </div>
         </div>
 

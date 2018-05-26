@@ -37,37 +37,39 @@
                                 <div class="card-body">
                                     <ul class="nav nav-tabs">
                                         <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#descripcion">Descripción</a>
+                                            <a class="nav-link active" data-toggle="tab" href="#descripcion">Description</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" data-toggle="tab" href="#analisis">Analisis</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#evaluacion">Evaluación</a>
+                                            <a class="nav-link" data-toggle="tab" href="#evaluacion">Evaluation</a>
                                         </li>
                                     </ul>
-
-                                    <div class="tab-content">
+                                    <form action="{{route('risk.store')}}" method="POST">
+                                        @csrf()
+                                        <input type="hidden" value="{{$id_project}}" name="id_project">
+                                     <div class="tab-content">
                                         <div class="tab-pane active container" id="descripcion">
                                             <br>
                                             <div class="card">
                                                 <div class="card-body col-md-8">
                                                     <div class="form-group">
-                                                        <label for="name">Name:</label>
+                                                        <label for="name">Risk Name:</label>
                                                         <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="country">Owner:</label>
                                                         <br>
                                                         <div class="select">
-                                                            {{ Form::select('employee', $employees->prepend('none')->pluck('name', 'id_employee'), null, ['class' => 'form-control', 'id' => 'employee']) }}
+                                                            {{ Form::select('id_employee', $employees->prepend('none')->pluck('name', 'id'), null, ['class' => 'form-control', 'id' => 'id_employee']) }}
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="country">Category:</label>
                                                         <br>
                                                         <div class="select">
-                                                            {{ Form::select('category', $categories->prepend('none')->pluck('name', 'id_category'), null, ['class' => 'form-control', 'id' => 'category']) }}
+                                                            {{ Form::select('id_category', $categories->prepend('none')->pluck('name', 'id_category'), null, ['class' => 'form-control', 'id' => 'category']) }}
                                                         </div>
                                                     </div>
 
@@ -75,7 +77,7 @@
                                                         <label for="country">Group:</label>
                                                         <br>
                                                         <div class="select">
-                                                            {{ Form::select('group', $groups->prepend('none')->pluck('name', 'id'), null, ['class' => 'form-control', 'id' => 'group']) }}
+                                                            {{ Form::select('id_group', $groups->prepend('none')->pluck('name', 'id'), null, ['class' => 'form-control', 'id' => 'group']) }}
                                                         </div>
                                                     </div>
 
@@ -83,7 +85,7 @@
                                                         <label for="country">Stage:</label>
                                                         <br>
                                                         <div class="select">
-                                                            {{ Form::select('stage', $stages->prepend('none')->pluck('name', 'id'), null, ['class' => 'form-control', 'id' => 'stage']) }}
+                                                            {{ Form::select('id_stage', $stages->prepend('none')->pluck('name', 'id'), null, ['class' => 'form-control', 'id' => 'stage']) }}
                                                         </div>
                                                     </div>  
                                                 </div>                                                   
@@ -98,10 +100,10 @@
 
                                                 <ul class="nav nav-tabs">
                                                     <li class="nav-item">
-                                                        <a class="nav-link active" data-toggle="tab" href="#prevencion">Plan Prevención</a>
+                                                        <a class="nav-link active" data-toggle="tab" href="#prevencion">Prevention</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" data-toggle="tab" href="#mitigacion">Plan Mitigación</a>
+                                                        <a class="nav-link" data-toggle="tab" href="#mitigacion">Mitigation</a>
                                                     </li>
                                                 </ul>
 
@@ -110,13 +112,7 @@
                                                         <div class="form-group">
                                                             <br>
                                                             <label for="name">Risk Name:</label>
-                                                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="date">Date: </label>
-                                                            <br>
-                                                            <input type="date" class="form-control" style="width: 50%;" name="date\
-                                                            " step="1" min="<?php echo date("Y-m-d");?>" value="<?php echo date("Y-m-d");?>">
+                                                            <input id="nameplanprevencion" type="text" class="form-control">
                                                         </div>
                                                         <div class="card">
                                                             <div class="card-header">
@@ -137,10 +133,10 @@
                                                                     </thead>
                                                                     <tbody>
                                                                         <tr>
-                                                                            <td><input style="margin-bottom: 10px;" id="name" type="text" class="form-control" name="name" required placeholder="Nombre Tarea"></td>
+                                                                            <td><input style="margin-bottom: 10px;" id="name" type="text" class="form-control" name="nameprevention[]" required placeholder="Task Name"></td>
                                                                             <td>
                                                                                 <div class="form-group">
-                                                                                    <input type="date" class="form-control" style="margin-bottom: 10px; width: 120px;"  name="date" step="1" min="<?php echo date("Y-m-d");?>" value="<?php echo date("Y-m-d");?>">
+                                                                                    <input type="date" class="form-control" style="margin-bottom: 10px; width: 120px;"  name="dateprevention[]" step="1" min="<?php echo date("Y-m-d");?>" value="<?php echo date("Y-m-d");?>">
                                                                                 </div>
                                                                             </td>
                                                                             <td>
@@ -157,15 +153,10 @@
                                                     <div class="tab-pane container" id="mitigacion">
                                                         <br>
                                                         <div class="form-group">
-                                                            <label for="name">Name:</label>
-                                                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                                            <label for="name">Risk Name:</label>
+                                                            <input id="nameplanmitigacion" type="text" class="form-control">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="date">Date: </label>
-                                                            <br>
-                                                            <input type="date" class="form-control" style="width: 50%;" name="date\
-                                                            " step="1" min="<?php echo date("Y-m-d");?>" value="<?php echo date("Y-m-d");?>">
-                                                            <br>
                                                             <div class="card-header">
                                                                 <div class="row">
                                                                     <div class="col-md-12">
@@ -184,10 +175,10 @@
                                                                     </thead>
                                                                     <tbody>
                                                                         <tr>
-                                                                            <td><input style="margin-bottom: 10px;" id="name" type="text" class="form-control" name="name" required placeholder="Nombre Tarea"></td>
+                                                                            <td><input style="margin-bottom: 10px;" id="name4" type="text" class="form-control" name="namemitigation[]" placeholder="Task Name"></td>
                                                                             <td>
                                                                                 <div class="form-group">
-                                                                                    <input type="date" class="form-control" style="margin-bottom: 10px; width: 120px;"  name="date" step="1" min="<?php echo date("Y-m-d");?>" value="<?php echo date("Y-m-d");?>">
+                                                                                    <input type="date" class="form-control" style="margin-bottom: 10px; width: 120px;"  name="datemitigation[]" step="1" min="<?php echo date("Y-m-d");?>" value="<?php echo date("Y-m-d");?>">
                                                                                 </div>
                                                                             </td>
                                                                             <td>
@@ -209,29 +200,54 @@
                                         <div class="tab-pane container" id="evaluacion">
                                             <br>
                                             <div class="form-group">
-                                                <label for="name">Name:</label>
-                                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                                <label for="name">Risk name:</label>
+                                                <input id="nameevaluacion" type="text" class="form-control">
                                             </div>
                                             <div class="form-group">
                                                 <label for="country">probability:</label>
                                                 <br>
                                                 <div class="select">
-                                                    {{-- {{ Form::select('stage', $stages->prepend('none')->pluck('name', 'id'), null, ['class' => 'form-control', 'id' => 'stage']) }} --}}
+                                                    <select class="form-control" id="probability" name="probability" aria-required="true">
+                                                        <option value="">Select an Option</option>
+                                                        <option value="0.2">Very Low</option>
+                                                        <option value="0.4">Low</option>
+                                                        <option value="0.6">medium</option>
+                                                        <option value="0.8">High</option>
+                                                        <option value="1">Very High</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="country">Impact:</label>
                                                 <br>
                                                 <div class="select">
-                                                    {{-- {{ Form::select('stage', $stages->prepend('none')->pluck('name', 'id'), null, ['class' => 'form-control', 'id' => 'stage']) }} --}}
+                                                    <select class="form-control" id="impact" name="impact" aria-required="true">
+                                                        <option value="">Select an Option</option>
+                                                        <option value="1">Very Low</option>
+                                                        <option value="2">Low</option>
+                                                        <option value="3">medium</option>
+                                                        <option value="4">High</option>
+                                                        <option value="5">Very High</option>
+                                                    </select>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="name">Risk Management:</label>
-                                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+
+                                             <br><br>
+
+                                        <div class="form-group row">
+                                            <div class="col-md-8 offset-md-7">
+                                                <button type="submit" class="btn btn-primary" style="width: 50%;">
+                                                    {{ __('Save') }}
+                                                </button>
                                             </div>
+                                        </div> 
+
                                         </div>
-                                        </div>   
+                                        </div>
+
+                                    </form>
+
+
                                         </div>  {{--  end card --}}
                                     </div>
                                 </div>  {{--  end card --}}
@@ -270,6 +286,31 @@
 <script>
     $(document).ready( function () {
 
+        $('.btnNext').click(function(){
+          $('.nav-tabs > .active').next('li').find('a').trigger('click');
+      });
+
+        $('.btnPrevious').click(function(){
+          $('.nav-tabs > .active').prev('li').find('a').trigger('click');
+      });
+
+
+
+        $('#name').change(function() {
+            $('#name2').val($(this).val());
+            $('#name2').prop('disabled', true);
+
+            $('#nameplanprevencion').val($(this).val());
+            $('#nameplanprevencion').prop('disabled', true);
+
+            $('#nameplanmitigacion').val($(this).val());
+            $('#nameplanmitigacion').prop('disabled', true);
+            
+            $('#nameevaluacion').val($(this).val());
+            $('#nameevaluacion').prop('disabled', true);
+        });
+
+
         $('#myTable').DataTable();
         $('#myTable2').DataTable();
 
@@ -280,8 +321,8 @@
             i++;
             j++;  
             $('<tr id="row'+i+'" class="dynamic-added-task">'+ 
-              '<td><div class="form-group"><input id="name" type="text" name="name" class="form-control" style ="width:224px;" required placeholder="Nombre Tarea"></div></td>'+
-              '<td><div class="form-group"><input type="date" style="width: 120px;" class="form-control" name="date" step="1" min="<?php echo date("Y-m-d");?>" value="<?php echo date("Y-m-d");?>"></div></td>'+
+              '<td><div class="form-group"><input id="name" type="text" name="nameprevention[]" class="form-control" style ="width:224px;" required placeholder="Task Name"></div></td>'+
+              '<td><div class="form-group"><input type="date" style="width: 120px;" class="form-control" name="dateprevention[]" step="1" min="<?php echo date("Y-m-d");?>" value="<?php echo date("Y-m-d");?>"></div></td>'+
               '</td><td><button style="margin-left:30px;" type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>').appendTo('#myTable');  
 
         }); 
@@ -295,8 +336,8 @@
             i++;
             j++;  
             $('<tr id="row'+i+'" class="dynamic-added-task2">'+ 
-              '<td><div class="form-group"><input id="name" type="text" name="name" class="form-control" style ="width:224px;" required placeholder="Nombre Tarea"></div></td>'+
-              '<td><div class="form-group"><input type="date" style="width: 120px;" class="form-control" name="date" step="1" min="<?php echo date("Y-m-d");?>" value="<?php echo date("Y-m-d");?>"></div></td>'+
+              '<td><div class="form-group"><input id="name" type="text" name="namemitigation[]" class="form-control" style ="width:224px;" required placeholder="Task Name  "></div></td>'+
+              '<td><div class="form-group"><input type="date" style="width: 120px;" class="form-control" name="datemitigation[]" step="1" min="<?php echo date("Y-m-d");?>" value="<?php echo date("Y-m-d");?>"></div></td>'+
               '</td><td><button style="margin-left:30px;" type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove2">X</button></td></tr>').appendTo('#myTable2');  
 
         }); 

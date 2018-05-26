@@ -11,4 +11,10 @@ class Country extends Model
 	public $timestamps = false;
 
 	public $primaryKey = 'id';
+
+
+	public static function getByCompany($company_id){
+		return Country::where('id_company','=',$company_id)->get();
+	}
+
 }

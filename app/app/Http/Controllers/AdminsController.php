@@ -8,6 +8,7 @@ use App\User;
 use App\Rep;
 use App\PollsModel;
 use DB;
+use App\Company;
 
 use App\Emails;
 
@@ -130,6 +131,7 @@ class AdminsController extends Controller
      */
     public function edit($id)
     {
+            
         DB::select("call aproval($id)");
 
         $user = User::find($id);
@@ -138,6 +140,16 @@ class AdminsController extends Controller
                       'lastname' => $user->lastname,
                       'email' => $user->email,
                       'code' => $user->code);
+
+        $user = User::find($id);
+        $company = new Company;
+
+
+        $company->name = $user->company;
+        $company->save();
+
+        $user->id_company = $company->id_company;
+        $user->save();
 
         Emails::email_registration_user_approved($user->email, $data);
 

@@ -66,8 +66,7 @@
                                                             <div class="form-group">
                                                                 <label for="date">Date: </label>
                                                                 <br>
-                                                                <input type="date" class="form-control" style="width: 50%;" name="date\
-                                                                " step="1" min="<?php echo date("Y-m-d");?>" value="<?php echo date("Y-m-d");?>">
+                                                                <input type="date" class="form-control" style="width: 50%;" name="date" step="1" min="<?php echo date("Y-m-d");?>" value="<?php echo date("Y-m-d");?>">
                                                             </div>
                                                         </div>
                                                         <div class="card-body col-md-12">
@@ -100,8 +99,8 @@
                                                             </div>
                                                         <br>
                                                         <div class="form-group row">
-                                                            <div class="col-md-8 offset-md-9">
-                                                                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                                            <div class="col-md-8 offset-md-7">
+                                                            <button type="submit" class="btn btn-primary" style="width: 50%;">
                                                                     {{ __('Save') }}
                                                                 </button>
                                                             </div>

@@ -15,7 +15,9 @@ class StagesController extends Controller
      */
     public function index()
     {
-        $stages = Stage::all();
+        $id_company = Auth()->user()->id_company;
+
+        $stages = Stage::where('id_company', '=', $id_company)->get();
 
         return view('stages.stages')->with('stages', $stages);
     }
@@ -40,7 +42,11 @@ class StagesController extends Controller
     {
         $stage = new Stage;
 
+        $id_company = Auth()->user()->id_company;
+
         $stage->name = $req->input('name');
+
+        $stage->id_company = $id_company;
 
         $stage->save();
 

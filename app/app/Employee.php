@@ -11,4 +11,10 @@ class Employee extends Model
 	public $timestamps = false;
 
 	public $primaryKey = 'id_employee';
+
+
+	public static function getByCompany($company_id){
+		return Employee::where('id_company', '=', $company_id)->get();
+	}
+	
 }

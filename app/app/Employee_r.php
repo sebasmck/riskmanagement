@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Db;
 
 class Employee_r extends Model
 {
@@ -12,5 +13,18 @@ class Employee_r extends Model
 
 	public $primaryKey = 'id';
 
-	public $fillable = ['company_id', 'project_id'];
+	public $fillable = ['id_project','name','position','email','phone',];
+
+	public function baseEmployee(){
+		return $this->hasOne('App\Employee', 'id_employee', 'id');
+	}
+
+	public static function getByProject($id_project){
+		return Employee_r::where('id_project', '=', $id_project)->get();
+	}
+
+	
+
+
+	
 }

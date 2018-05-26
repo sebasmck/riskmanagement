@@ -31,4 +31,10 @@ class Project extends Model
     public static function getBbyCompany($company_id){
     	return Project::where('company_id','=',$company_id)->get();
     }
+
+    // public static function getBbyCompany($company_id){
+    //     return Employee::where('id_employee','=',$company_id)->get();
+    // }
+
+
 }
