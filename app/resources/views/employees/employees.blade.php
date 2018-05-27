@@ -39,7 +39,7 @@
                                                     <th>position</th>
                                                     <th>email</th>
                                                     <th>phone</th>
-                                                    <th>Edit</th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -49,7 +49,10 @@
                                                     <td>{{$employee->position}}</td>
                                                     <td>{{$employee->email}}</td>
                                                     <td>{{$employee->phone}}</td>
-                                                    <td><a href=""> <center> <button type="button" class="btn btn-primary">Edit</button> </center></a></td>
+                                                    <td>{!! Form::open(['route' => ['employee.destroy', $employee->id_employee], 'method' => 'DELETE']) !!}
+                                                        {!!Form::submit('x', ['class' => 'btn btn-danger btn_remove', 'style' => 'margin-left:45%;']) !!}
+                                                        {!! Form::close() !!}
+                                                    </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>

@@ -47,7 +47,8 @@
 
                                                         {!!Form::submit('x', ['class' => 'btn btn-danger btn_remove', 'style' => 'margin-left:45%;']) !!}
 
-                                                        {!! Form::close() !!}</td>
+                                                        {!! Form::close() !!}
+                                                    </td>
                                                 </tr> 
                                                 @endforeach
                                             </tbody>

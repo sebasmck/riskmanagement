@@ -82,6 +82,8 @@ class PreventionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $prevention = Prevention::find($id);
+        $prevention->delete();
+        return redirect()->back();
     }
 }

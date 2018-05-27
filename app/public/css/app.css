@@ -7,9 +7,31 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+.verticalLine {
+    writing-mode: vertical-rl;
+  border-left: thick solid #ff0000;
+}
+
+.verticalLineYellow{
+    writing-mode: vertical-rl;
+  border-left: thick solid #ffff14;
+}
+
+.verticalLineGreen{
+    writing-mode: vertical-rl;
+  border-left: thick solid #16d613;
+}
+
+.verticalImpacto{
+    margin-top: 60px;
+    position: absolute;
+    margin-left: 150px;
+    height: 580px;
+    border-left: thick solid navy;
+    writing-mode: vertical-lr;
+}
 
 /*matrix*/
-
 .box {
     flex: 1 0 auto;
     position: relative;

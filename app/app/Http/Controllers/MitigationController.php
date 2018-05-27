@@ -48,9 +48,12 @@ class MitigationController extends Controller
      */
     public function show($id)
     {
+
         $mitigations = Mitigation::where('id_risk', '=', $id)->get();
 
-        return view('projects.risks.mitigation')->with('mitigations', $mitigations);
+        return view('projects.risks.mitigation')
+        ->with('mitigations', $mitigations)
+        ->with('id_risk', $id);
     }
 
     /**
@@ -84,6 +87,8 @@ class MitigationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $mitigation = Mitigation::find($id);
+        $mitigation->delete();
+        return redirect()->back();
     }
 }

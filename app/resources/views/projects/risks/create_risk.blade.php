@@ -209,11 +209,11 @@
                                                 <div class="select">
                                                     <select class="form-control" id="probability" name="probability" aria-required="true">
                                                         <option value="">Select an Option</option>
-                                                        <option value="0.2">Very Low</option>
-                                                        <option value="0.4">Low</option>
-                                                        <option value="0.6">medium</option>
-                                                        <option value="0.8">High</option>
-                                                        <option value="1">Very High</option>
+                                                        <option value="1">Very Low</option>
+                                                        <option value="2">Low</option>
+                                                        <option value="3">medium</option>
+                                                        <option value="4">High</option>
+                                                        <option value="5">Very High</option>
                                                     </select>
                                                 </div>
                                             </div>

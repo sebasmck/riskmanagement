@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 title_polla">
-                {{-- {{$project->name}} --}}name
+                Prevention Plans
             </div>
         </div>
 
@@ -73,7 +73,10 @@
                                     <tr>
                                         <td>{{$prevention->name}}</td>
                                         <td>{{$prevention->date}}</td>
-                                        <td></td>
+                                        <td>{!! Form::open(['route' => ['prevention.destroy', $prevention->id_prevention], 'method' => 'DELETE']) !!}
+                                            {!!Form::submit('x', ['class' => 'btn btn-danger btn_remove', 'style' => 'margin-left:45%;']) !!}
+                                            {!! Form::close() !!}
+                                        </td>
                                     </td>
                                     </tr> 
                                     @endforeach

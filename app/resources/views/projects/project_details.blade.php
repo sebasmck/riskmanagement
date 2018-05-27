@@ -16,14 +16,14 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <button type="" class="btn btn-primary" onclick="window.location='{{ route('project.edit', $project->id_project) }}'" style="width: 100%;">
-                                        {{ __('Ver Matriz Boston') }}
+                                        {{ __('Ver Matriz Nivel de Riesgo') }}
                                     </button>
                                 </div>    
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <button type="" class="btn btn-primary" onclick="window.location='{{ route('rules') }}'" style="width: 100%;">
-                                        {{ __('Matriz Nivel Riesgo') }}
+                                        {{ __('Matriz Prueba') }}
                                     </button>
                                 </div>
                             </div>
@@ -95,6 +95,7 @@
                             <table id="myTable" class="display">
                                 <thead>
                                     <tr>
+                                        <th>id</th>
                                         <th>Risk Name</th>
                                         <th>Owner</th>
                                         <th>Mitigation</th>
@@ -106,6 +107,7 @@
                                 <tbody>
                                     @foreach($risks as $risk)
                                     <tr>
+                                        <td>{{$risk->id_risk}}</td>
                                         <td>{{$risk->name}}</td>
                                         <td>{{$risk->employee->name}}</td>
                                         <td><a  style="margin-left: 35%;" class="btn btn-primary" href="{{route('mitigation.show', $risk->id_risk)}}"> <span><i class="fas fa-check-square"></i></span>  </a> </td>

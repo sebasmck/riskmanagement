@@ -55,7 +55,7 @@
                               <a href="/program">Program Management</a>
                             </li>
                           </ul>
-                        </nav></div>d
+                        </nav>
                       </div>
                     
                   </section>

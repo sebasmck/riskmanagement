@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 title_polla">
-                Matriz Boston
+                Matriz Nivel de Riesgo
             </div>
         </div>
 
@@ -20,19 +20,23 @@
                         
                     </div>
 
-                    <div style="height:650px;" class="card-body">
-                    
+                    <div style="height:850px;" class="card-body">
 
+                        <div class="verticalImpacto">
+                            <b style="letter-spacing: 30px; margin-top: 180px;">Impacto</b>
+                        </div>            
+        
                         {{-- matrix goes here --}}
                      <div class="grid">
+                        
                         <div style="height: 45px; background-color: navy;" class="row">
                             <div style="background-color: navy;" class="box"><center>Nivel de Riesgo</center></div>
                         </div>
 
-                        
-                        
-
                         <div class="row">
+                            <div class="verticalLine">
+                                Very High
+                            </div>
                             <div class="box"><div class="inner">
                                 @foreach ($risks as $risk)
                                     @if ($risk->probability == 1 && $risk->impact == 5)
@@ -69,7 +73,11 @@
                                 @endforeach
                             </div></div>
                         </div>
+
                         <div class="row">
+                            <div class="verticalLineYellow">
+                                High
+                            </div>
                             <div style="background-color: #ffff14;" class="box"><div class="inner">
                                 @foreach ($risks as $risk)
                                     @if ($risk->probability == 1 && $risk->impact == 4)
@@ -107,6 +115,9 @@
                             </div></div>
                         </div>
                         <div class="row">
+                            <div class="verticalLineYellow">
+                                Medium
+                            </div>
                             <div style="background-color: #ffff14;" class="box"><div class="inner">
                                 @foreach ($risks as $risk)
                                     @if ($risk->probability == 1 && $risk->impact == 3)
@@ -144,6 +155,9 @@
                             </div></div>
                         </div>
                         <div class="row">
+                            <div class="verticalLineGreen">
+                                Low
+                            </div>
                             <div style="background-color: #16d613;" class="box"><div class="inner">
                                 @foreach ($risks as $risk)
                                     @if ($risk->probability == 1 && $risk->impact == 2)
@@ -181,6 +195,9 @@
                             </div></div>
                         </div>
                         <div class="row">
+                            <div class="verticalLineGreen">
+                                Ver Low
+                            </div>
                             <div style="background-color: #16d613;" class="box"><div class="inner">
                                 @foreach ($risks as $risk)
                                     @if ($risk->probability == 1 && $risk->impact == 1)
